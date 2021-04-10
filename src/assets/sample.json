@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "item": "Oil",
+        "price": "10",
+        "category": "kitchen"
+    },
+    {
+        "id": 2,
+        "item": "Coffee",
+        "price": "8",
+        "category": "morning tea"
+    },
+    {
+        "id": 3,
+        "item": "Sugar",
+        "price": "3",
+        "category": "morning tea"
+    },
+    {
+        "id": 4,
+        "item": "Bread",
+        "price": "2",
+        "category": "break fast"
+    },
+    {
+        "id": 5,
+        "item": "Curd",
+        "price": "3",
+        "category": "lunch"
+    },
+    {
+        "id": 6,
+        "item": "Milk",
+        "price": "2.5",
+        "category": "morning tea"
+    }
+]

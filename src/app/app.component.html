@@ -1,0 +1,66 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!-- <router-outlet></router-outlet> -->
+
+<div class="container-fluid">
+  <div class="alert alert-primary d-flex justify-content-center" role="alert">
+    Grocery Helper
+  </div>
+  <div class="form-row col-4 mb-2">
+    <div class="col">
+      <input type="text" class="form-control" name="id" placeholder="search by category"
+        (input)="searchCategory($event)">
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Category</th>
+        <th scope="col">Item</th>
+        <th scope="col">Price</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of groceryLists">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.category}}</td>
+        <td>{{item.item}}</td>
+        <td>{{item.price}}</td>
+        <td>
+          <button type="button" class="btn btn-dark mr-2" (click)="updateItem(item)">Update</button>
+          <button type="button" class="btn btn-dark mr-2" (click)="deleItem(item.id)">Delete</button>
+          <button type="button" class="btn btn-success" (click)="createItem()">Create New</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form class="col-8" *ngIf="showForm">
+    <!-- <div class="form-row mb-2 d-flex justify-content-end">
+      <button type="submit" class="btn btn-success" (click)="createItem()">Create New</button>
+    </div> -->
+    <div class="form-row mb-2">
+      <div class="col">
+        <input type="text" class="form-control" name="id" placeholder="ID" [(ngModel)]="grocery.id"
+          [hidden]="!updateIDItem" [disabled]="updateIDItem">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="Category" placeholder="Category" [(ngModel)]="grocery.category">
+      </div>
+    </div>
+    <div class="form-row mb-2">
+      <div class="col">
+        <input type="text" class="form-control" name="Item" placeholder="Item" [(ngModel)]="grocery.item">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="Price" placeholder="Price" [(ngModel)]="grocery.price">
+      </div>
+    </div>
+    <div class="form-row mb-2 d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary" (click)="submitGrocery()">Submit</button>
+    </div>
+  </form>
+</div>
